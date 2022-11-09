@@ -20,8 +20,21 @@ exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
 
-function exponent(num, power) {
-    // Your code here
+function exponent(num, power, res = 1) {
+  // Base case
+  if (power === 0) return res;
+
+  // Recursive step
+
+  if (power > 0) {
+    res *= num;
+    return exponent(num, power - 1, res);
+  }
+  // if exponent is negative 
+  if (power < 0) {
+    res /= num;
+    return exponent(num, power + 1, res);
+  }
 }
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
